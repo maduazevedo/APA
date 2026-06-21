@@ -6,20 +6,6 @@ import plotly.graph_objects as go
 from theme import apply
 import components as ui
 
-_NOMES = {
-    "Injury_History":     "Historico de Lesoes",
-    "Sleep_Hours":        "Horas de Sono",
-    "Training_Intensity": "Intensidade de Treino",
-    "Muscle_Asymmetry":   "Assimetria Muscular",
-    "Training_Frequency": "Frequencia de Treino",
-    "Training_Duration":  "Duracao do Treino",
-    "Flexibility_Score":  "Flexibilidade",
-    "Stress_Level":       "Nivel de Estresse",
-    "Recovery_Time":      "Tempo de Recuperacao",
-    "Warmup_Time":        "Aquecimento",
-    "BMI":                "IMC",
-    "Age":                "Idade",
-}
 
 _INFO_CORR = (
     "<strong>O que este grafico mostra</strong><br>"
@@ -124,12 +110,3 @@ def render(df, t):
         )
         st.plotly_chart(fig, use_container_width=True)
 
-    # ── Podio dos preditores (gamificacao) ────────────────────────────
-    st.markdown("<br>", unsafe_allow_html=True)
-    ui.section_label("Podio dos Preditores — Top 3 por correlacao com risco")
-
-    valid = [v for v in diff_vars + ["Injury_History"] if v in df.columns]
-    if len(df) >= 10 and valid:
-        corrs  = df[valid].corrwith(df["Injury_Risk"]).abs().sort_values(ascending=False)
-        top3   = [((_NOMES.get(k, k)), v) for k, v in corrs.head(3).items()]
-        ui.podium(top3, t)

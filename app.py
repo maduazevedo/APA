@@ -17,11 +17,6 @@ st.set_page_config(
 if "theme_mode" not in st.session_state:
     st.session_state.theme_mode = "dark"
 
-# ── Exploração de abas ────────────────────────────────────────────────────
-for i in range(1, 6):
-    if f"tab{i}_done" not in st.session_state:
-        st.session_state[f"tab{i}_done"] = False
-
 t = get_theme(st.session_state.theme_mode)
 st.markdown(inject_css(t), unsafe_allow_html=True)
 
@@ -87,11 +82,6 @@ with st.sidebar:
         f"{n_prev} de {len(df_all)} atletas</div>",
         unsafe_allow_html=True,
     )
-
-    ui.divider()
-
-    # ── Progresso de exploracao ───────────────────────────────────────
-    ui.exploration_progress(t)
 
     ui.divider()
 
@@ -164,23 +154,18 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 
 with tab1:
     perfil.render(df, t)
-    ui.tab_complete_btn(1, t)
 
 with tab2:
     treino.render(df, t)
-    ui.tab_complete_btn(2, t)
 
 with tab3:
     recuperacao.render(df, t)
-    ui.tab_complete_btn(3, t)
 
 with tab4:
     condicao.render(df, t)
-    ui.tab_complete_btn(4, t)
 
 with tab5:
     visao_geral.render(df, t)
-    ui.tab_complete_btn(5, t)
 
 ui.divider()
 st.markdown(

@@ -5,7 +5,6 @@ blinker==1.9.0
 Brotli==1.1.0
 cachetools==6.2.2
 certifi==2025.7.14
-cffi==1.17.1
 charset-normalizer==3.4.2
 click==8.3.1
 colorama==0.4.6
@@ -42,8 +41,6 @@ pyarrow==22.0.0
 pyasn1==0.6.1
 pycparser==2.22
 pydeck==0.9.1
-pydivert==2.1.0
-pyOpenSSL==25.1.0
 pyparsing==3.2.3
 PySocks==1.7.1
 python-dateutil==2.9.0.post0
@@ -55,7 +52,6 @@ scikit-learn==1.7.2
 scipy==1.16.3
 seaborn==0.13.2
 selenium==4.34.2
-selenium-wire==5.1.0
 setuptools==80.9.0
 six==1.17.0
 smmap==5.0.2
