@@ -15,45 +15,40 @@ DATA_RISK    = "#27B8D8"   # ciano fechado: grupo em risco (sem jujuba)
 
 THEMES = {
     "dark": {
-        # Fundos — sidebar mais escura que antes
-        "bg":       "#06091A",   # navy quase preto
-        "card":     "#0C0A38",   # sidebar/card mais escuro
-        "card2":    "#0A0C3C",   # card elevado
-        "border":   "#20287E",   # azul escuro (2o da paleta)
-        # Texto
-        "text":     "#E8EEF7",   # branco frio
-        "muted":    "#4895EF",   # azul claro (4o) — legivel sobre card
-        "light":    "#4361EE",   # azul medio (3o)
-        # Destaque — ciano fechado, sem saturacao de jujuba
-        "accent":   "#2785D8",   # ciano muted
-        # Graficos
+        "bg":       "#09090B",   # zinc-950
+        "card":     "#18181B",   # zinc-900
+        "card2":    "#27272A",   # zinc-800
+        "border":   "#3F3F46",   # zinc-700
+        "text":     "#FAFAFA",   # zinc-50
+        "muted":    "#A1A1AA",   # zinc-400
+        "light":    "#D4D4D8",   # zinc-300
+        "accent":   "#3B82F6",   # blue-500
         "plot_bg":  "rgba(0,0,0,0)",
-        "grid":     "#0C0F49",   # grade sutil
-        "heat_low": "#0A064A",
-        "heat_mid": "#4361EE",
-        "heat_high":"#2777D8",
-        # Tokens de estado (gamificacao)
-        "positive": "#2780D8",   # ciano fechado = positivo
-        "negative": "#4895EF",   # azul claro — diferenciado
-        "warning":  "#4361EE",   # azul medio — aviso
+        "grid":     "#27272A",   # zinc-800
+        "heat_low": "#09090B",
+        "heat_mid": "#1D4ED8",   # blue-700
+        "heat_high":"#3B82F6",   # blue-500
+        "positive": "#3B82F6",   # blue-500
+        "negative": "#60A5FA",   # blue-400
+        "warning":  "#818CF8",   # indigo-400
     },
     "light": {
-        "bg":       "#EDF1FF",   # branco com leve tint navy
-        "card":     "#FFFFFF",
-        "card2":    "#DDE4FF",   # azul muito palido
-        "border":   "#4895EF",   # azul claro como borda
-        "text":     "#12086F",   # navy escuro para texto (alto contraste)
-        "muted":    "#2B35AF",   # azul escuro muted
-        "light":    "#4361EE",   # azul medio claro
-        "accent":   "#4361EE",   # royal blue — contraste bom no branco
+        "bg":       "#F4F4F5",   # zinc-100
+        "card":     "#FFFFFF",   # branco puro
+        "card2":    "#EBEBEC",   # zinc-200 leve
+        "border":   "#D4D4D8",   # zinc-300
+        "text":     "#18181B",   # zinc-900
+        "muted":    "#71717A",   # zinc-500
+        "light":    "#52525B",   # zinc-600
+        "accent":   "#2563EB",   # blue-600
         "plot_bg":  "rgba(0,0,0,0)",
-        "grid":     "#DDE4FF",
-        "heat_low": "#EDF1FF",
-        "heat_mid": "#4895EF",
-        "heat_high":"#2B63B6",
-        "positive": "#27B8D8",
-        "negative": "#2B35AF",
-        "warning":  "#4361EE",
+        "grid":     "#E4E4E7",   # zinc-200
+        "heat_low": "#F4F4F5",   # zinc-100
+        "heat_mid": "#BFDBFE",   # blue-200
+        "heat_high":"#1D4ED8",   # blue-700
+        "positive": "#2563EB",   # blue-600
+        "negative": "#1D4ED8",   # blue-700
+        "warning":  "#6366F1",   # indigo-500
     },
 }
 
