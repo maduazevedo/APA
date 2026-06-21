@@ -47,7 +47,7 @@ def render(df, t):
         apply(fig, t)
         hlegend(fig, t)
         fig.update_yaxes(title="Horas de sono por noite")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, theme=None)
 
     with col_b:
         ui.chart_header("Risco por nivel de estresse",
@@ -65,7 +65,7 @@ def render(df, t):
         fig.update_xaxes(title="Nivel de estresse (1 = baixo, 10 = alto)", dtick=1)
         fig.update_yaxes(title="Atletas com risco (%)",
                          range=[0, max(75, sr["pct"].max() * 1.2)])
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, theme=None)
 
     st.markdown("<br>", unsafe_allow_html=True)
     ui.chart_header("Tempo de recuperacao entre treinos por grupo de risco",
@@ -81,4 +81,4 @@ def render(df, t):
     apply(fig, t, h=270)
     hlegend(fig, t)
     fig.update_yaxes(title="Horas de recuperacao entre sessoes")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, theme=None)

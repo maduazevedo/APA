@@ -38,7 +38,7 @@ def render(df, t):
         fig.update_layout(barmode="overlay")
         fig.update_xaxes(title="Idade (anos)")
         fig.update_yaxes(title="% de atletas no grupo")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, theme=None)
 
     with col_b:
         ui.chart_header("IMC por grupo de risco", info=_INFO_IMC, signal=1)
@@ -52,4 +52,4 @@ def render(df, t):
             ))
         apply(fig, t)
         fig.update_yaxes(title="IMC")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, theme=None)

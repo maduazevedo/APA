@@ -25,18 +25,6 @@ _INFO_HISTORICO = (
 
 
 def render(df, t):
-    acc = t["accent"]
-    txt = t["text"]
-    st.markdown(
-        f"<div style='background:{acc}14;border:1.5px solid {acc}55;"
-        f"border-radius:8px;padding:0.65rem 1rem;margin-bottom:1rem;"
-        f"font-size:0.78rem;color:{txt};'>"
-        f"<strong style='color:{acc};font-size:0.65rem;text-transform:uppercase;"
-        f"letter-spacing:0.09em;'>Preditor #1 do Dataset</strong><br>"
-        f"Historico de Lesoes Anteriores tem a maior correlacao com risco de lesao "
-        f"de todas as variaveis analisadas (|rho| = 0.50).</div>",
-        unsafe_allow_html=True,
-    )
 
     col_a, col_b = st.columns(2)
 
@@ -53,7 +41,7 @@ def render(df, t):
         apply(fig, t)
         hlegend(fig, t)
         fig.update_yaxes(title="Indice de assimetria muscular")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, theme=None)
 
     with col_b:
         show_pct = st.toggle("Exibir em percentual", value=True, key="pct_hist")
@@ -75,4 +63,4 @@ def render(df, t):
         apply(fig, t)
         fig.update_xaxes(title="Lesoes anteriores")
         fig.update_yaxes(title=y_lbl)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, theme=None)

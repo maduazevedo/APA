@@ -50,7 +50,7 @@ THEMES = {
         "grid":     "#DDE4FF",
         "heat_low": "#EDF1FF",
         "heat_mid": "#4895EF",
-        "heat_high":"#12086F",
+        "heat_high":"#2B63B6",
         "positive": "#27B8D8",
         "negative": "#2B35AF",
         "warning":  "#4361EE",
@@ -119,6 +119,16 @@ def inject_css(t: dict) -> str:
     [data-testid="stSidebar"] [data-testid="stSlider"] p {{
         color: {t['muted']} !important;
         font-size: 0.72rem !important;
+    }}
+
+    /* ── Inputs fora da sidebar (ex: multiselect do mapa de correlacao) */
+    [data-testid="stWidgetLabel"] p {{ color: {t['text']} !important; }}
+    [data-baseweb="select"] > div,
+    [data-baseweb="select"] [role="combobox"],
+    [data-baseweb="select"] [role="combobox"] > div {{
+        background-color: {t['card']} !important;
+        border-color: {t['border']} !important;
+        color: {t['text']} !important;
     }}
 
     /* ── Dropdown popup (portal fora da sidebar) ─────────────────── */
@@ -376,21 +386,24 @@ def base_layout(t: dict) -> dict:
         paper_bgcolor=t["plot_bg"],
         plot_bgcolor=t["plot_bg"],
         font=dict(color=t["text"], family="Inter", size=12),
-        margin=dict(l=10, r=10, t=30, b=10),
+        margin=dict(l=60, r=20, t=40, b=55),
     )
 
 
 def apply(fig, t: dict, h: int = 320):
     fig.update_layout(**base_layout(t), height=h)
-    fig.update_xaxes(gridcolor=t["grid"], zerolinecolor=t["grid"], linecolor=t["grid"])
-    fig.update_yaxes(gridcolor=t["grid"], zerolinecolor=t["grid"], linecolor=t["grid"])
+    fig.update_xaxes(automargin=True, gridcolor=t["grid"], zerolinecolor=t["grid"], linecolor=t["grid"])
+    fig.update_yaxes(automargin=True, gridcolor=t["grid"], zerolinecolor=t["grid"], linecolor=t["grid"])
     return fig
 
 
 def hlegend(fig, t: dict):
-    fig.update_layout(legend=dict(
-        orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0,
-        title="", bgcolor="rgba(0,0,0,0)",
-        font=dict(size=11, color=t["light"])
-    ))
+    fig.update_layout(
+        legend=dict(
+            orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0,
+            title="", bgcolor="rgba(0,0,0,0)",
+            font=dict(size=11, color=t["light"]),
+        ),
+        margin=dict(t=65),
+    )
     return fig

@@ -52,10 +52,10 @@ def render(df, t):
         fig.update_layout(
             paper_bgcolor=t["plot_bg"], plot_bgcolor=t["plot_bg"],
             font=dict(color=t["text"], family="Inter", size=12),
-            margin=dict(l=10, r=10, t=30, b=10), height=460,
+            margin=dict(l=120, r=60, t=80, b=120), height=460,
         )
-        fig.update_xaxes(tickangle=-30)
-        st.plotly_chart(fig, use_container_width=True)
+        fig.update_xaxes(automargin=True, tickangle=-60)
+        st.plotly_chart(fig, use_container_width=True, theme=None)
     else:
         st.info("Selecione ao menos 2 variaveis.")
 
@@ -89,7 +89,7 @@ def render(df, t):
             fig.add_vline(x=0, line_color=t["grid"], line_width=1)
             fig.update_xaxes(title="Diferenca normalizada (Com Risco - Sem Risco)")
             fig.update_yaxes(title="")
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, theme=None)
 
     with col_b:
         ui.chart_header("Taxa de risco por faixa etaria e genero", info=_INFO_HEATMAP)
@@ -105,8 +105,8 @@ def render(df, t):
         fig.update_layout(
             paper_bgcolor=t["plot_bg"], plot_bgcolor=t["plot_bg"],
             font=dict(color=t["text"], family="Inter", size=12),
-            margin=dict(l=10, r=10, t=30, b=10), height=380,
+            margin=dict(l=60, r=20, t=40, b=55), height=380,
             xaxis_title="Faixa etaria", yaxis_title="Genero",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, theme=None)
 
