@@ -64,9 +64,10 @@ def render(df, t):
     col_a, col_b = st.columns(2)
 
     diff_vars = [
-        "BMI", "Training_Frequency", "Training_Duration", "Warmup_Time",
+        "Age", "BMI", "Training_Frequency", "Training_Duration", "Warmup_Time",
         "Sleep_Hours", "Flexibility_Score", "Muscle_Asymmetry",
         "Stress_Level", "Training_Intensity", "Recovery_Time",
+        "Injury_History",
     ]
 
     with col_a:
@@ -86,7 +87,7 @@ def render(df, t):
                 textposition="outside",
                 textfont=dict(color=t["light"], size=11),
             ))
-            apply(fig, t, h=380)
+            apply(fig, t, h=500)
             fig.add_vline(x=0, line_color=t["grid"], line_width=1)
             fig.update_xaxes(title="Diferenca normalizada (Com Risco - Sem Risco)")
             fig.update_yaxes(title="")

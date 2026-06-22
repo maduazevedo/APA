@@ -9,7 +9,7 @@ DATA_PATH = "df_balanced.csv"
 @st.cache_data
 def load_data() -> pd.DataFrame:
     df = pd.read_csv(DATA_PATH)
-    df["Genero"] = df["Gender"].map({0: "Masculino", 1: "Feminino"})
+    df["Genero"] = df["Gender"].map({0: "Feminino", 1: "Masculino"})
     df["Risco"] = df["Injury_Risk"].map({0: "Sem Risco", 1: "Com Risco"})
     df["Faixa_Etaria"] = pd.cut(
         df["Age"], bins=[17, 20, 25, 30, 35, 40],
