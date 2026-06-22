@@ -54,7 +54,7 @@ O arquivo `df_balanced.csv` precisa estar na mesma pasta que `app.py`.
 Caso queira recriar ou adaptar o projeto com um assistente de IA:
 
 > Crie um dashboard analítico no Streamlit chamado **Sports Injury Risk** usando o dataset `df_balanced.csv` 
-> ** e crie 5 abas para que eu possa adicionar gráficos posteriormente:**
+> e crie 5 abas para que eu possa adicionar gráficos posteriormente:
 > - **Perfil do Atleta:**
 > - **Hábitos de Treino:** 
 > - **Recuperação:** 
