@@ -53,6 +53,7 @@ def render(df, t):
             paper_bgcolor=t["plot_bg"], plot_bgcolor=t["plot_bg"],
             font=dict(color=t["text"], family="Inter", size=12),
             margin=dict(l=120, r=60, t=80, b=120), height=460,
+            hovermode=False,
         )
         fig.update_xaxes(automargin=True, tickangle=-60)
         st.plotly_chart(fig, use_container_width=True, theme=None)
@@ -107,6 +108,7 @@ def render(df, t):
             font=dict(color=t["text"], family="Inter", size=12),
             margin=dict(l=60, r=20, t=40, b=55), height=380,
             xaxis_title="Faixa etaria", yaxis_title="Genero",
+            hovermode=False,
         )
         st.plotly_chart(fig, use_container_width=True, theme=None)
 
