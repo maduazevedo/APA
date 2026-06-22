@@ -382,6 +382,7 @@ def base_layout(t: dict) -> dict:
         plot_bgcolor=t["plot_bg"],
         font=dict(color=t["text"], family="Inter", size=12),
         margin=dict(l=60, r=20, t=40, b=55),
+        hovermode=False,
     )
 
 

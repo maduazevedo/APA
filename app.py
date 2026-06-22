@@ -120,24 +120,13 @@ pct_f    = n_risk / n if n else 0.0
 sleep_f  = df["Sleep_Hours"].mean()  if n else 0.0
 stress_f = df["Stress_Level"].mean() if n else 0.0
 
-delta_risk   = (pct_f - pct_all) * 100
-delta_sleep  = (sleep_f  - df_all["Sleep_Hours"].mean())  / df_all["Sleep_Hours"].mean()  * 100 if df_all["Sleep_Hours"].mean() else 0
-delta_stress = (stress_f - df_all["Stress_Level"].mean()) / df_all["Stress_Level"].mean() * 100 if df_all["Stress_Level"].mean() else 0
 
 c1, c2, c3, c4, c5 = st.columns(5)
-ui.kpi_delta(c1, n,                        "Atletas analisados",
-             delta_pct=(n/len(df_all)-1)*100, higher_is_worse=False)
-ui.kpi_delta(c2, n_risk,                   "Em risco de lesao",
-             delta_pct=delta_risk,           higher_is_worse=True)
-ui.kpi_delta(c3, f"{pct_f*100:.1f}%" if n else "—",
-                                             "Taxa de risco",
-             delta_pct=delta_risk,           higher_is_worse=True)
-ui.kpi_delta(c4, f"{sleep_f:.1f}h" if n else "—",
-                                             "Sono medio / noite",
-             delta_pct=delta_sleep,          higher_is_worse=False)
-ui.kpi_delta(c5, f"{stress_f:.1f}/10" if n else "—",
-                                             "Estresse medio",
-             delta_pct=delta_stress,         higher_is_worse=True)
+ui.kpi_delta(c1, n,                                        "Atletas analisados")
+ui.kpi_delta(c2, n_risk,                                   "Em risco de lesao")
+ui.kpi_delta(c3, f"{pct_f*100:.1f}%" if n else "—",       "Taxa de risco")
+ui.kpi_delta(c4, f"{sleep_f:.1f}h" if n else "—",         "Sono medio / noite")
+ui.kpi_delta(c5, f"{stress_f:.1f}/10" if n else "—",      "Estresse medio")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
